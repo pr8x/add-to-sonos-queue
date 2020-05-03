@@ -105,22 +105,15 @@ var gotSoundCloudPlaylist = function(data) {
 };
 
 document.getElementById('add_to_queue').addEventListener('click', function(ev) {
-  ev.preventDefault();
+   ev.preventDefault();
   if (CURRENT_ITEM === null) { return; }
   var self = this;
   self.classList.remove('success');
-  self.classList.add('working');
-
-  var done = function () {
-    self.classList.remove('working');
-    self.classList.add('success');
-  };
-
-  if (CURRENT_ITEM.kind == 'track') {
-    addToQueue(CURRENT_ITEM).then(done).fail(createErrorFn('add track to queue'));
-  } else {
-    addToQueue(CURRENT_ITEM).then(done).fail(createErrorFn('add tracks to queue'));
-  }
+  play(CURRENT_ITEM)
+    .then(function() {
+      self.classList.add('success');
+    })
+    .fail(createErrorFn('play track'));
 }, false);
 
 document.getElementById('instaplay').addEventListener('click', function(ev) {
