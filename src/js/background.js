@@ -99,7 +99,7 @@ var wrapSoundCloudPlaylist = function(data) {
 // wrap Sonos calls in promises:
 var addSoundCloudTrackToQueue = function(data) {
   var track = wrapSoundCloudTrack(data);
-  return Q.ninvoke(SONOS_DEVICE, 'queue', track);
+  return Q.ninvoke(SONOS_DEVICE, 'play', track);
 };
 
 var addMultipleSoundCloudTracksToQueue = function(data) {
@@ -109,7 +109,7 @@ var addMultipleSoundCloudTracksToQueue = function(data) {
 
 var addSoundCloudPlaylistToQueue = function(data) {
   var playlist = wrapSoundCloudPlaylist(data);
-  return Q.ninvoke(SONOS_DEVICE, 'queue', playlist);
+  return Q.ninvoke(SONOS_DEVICE, 'play', playlist);
 };
 
 var play = function(data, sendResponse) {
@@ -193,7 +193,7 @@ var addHearThisAtTrackToPlaylist = function(id, sendResponse) {
 
     var track = {uri: trackuri, metadata: metadata};
 
-    Q.ninvoke(SONOS_DEVICE, 'queue', track);
+    Q.ninvoke(SONOS_DEVICE, 'play', track);
     sendResponse({success: true});
   });
 };

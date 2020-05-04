@@ -60,8 +60,8 @@ function createButton(prevButton, url) {
   var addToSonosButton = document.createElement('button');
   addToSonosButton.className = prevClasses + ' ats-button ats-collapse';
   addToSonosButton.tabIndex = 0;
-  addToSonosButton.title = 'Add to Sonos';
-  addToSonosButton.innerHTML = 'Add to Sonos';
+  addToSonosButton.title = 'Play on Sonos';
+  addToSonosButton.innerHTML = 'Play on Sonos';
 
   addToSonosButton.addEventListener('click', function(ev) {
     ev.preventDefault();

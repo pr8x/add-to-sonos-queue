@@ -99,8 +99,8 @@ function createButton(prevButton, id) {
   var addToSonosButton = document.createElement(otherButton.nodeName);
   addToSonosButton.className = otherButton.className.replace(/(\S+)_fct/, '') + ' ats-button ats-button-' + lod;
   addToSonosButton.tabIndex = 0;
-  addToSonosButton.title = 'Add to Sonos';
-  addToSonosButton.innerHTML = 'Add to Sonos';
+  addToSonosButton.title = 'Play on Sonos';
+  addToSonosButton.innerHTML = 'Play on Sonos';
 
   addToSonosButton.addEventListener('click', function(ev) {
     ev.preventDefault();
